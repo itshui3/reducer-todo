@@ -4,6 +4,8 @@ import { Button, Card, Cardbody} from 'reactstrap';
 // context
 import ActionsContext from '../contexts/ActionsContext'
 import StateContext from '../contexts/StateContext'
+// styling
+import './TodoItem.scss'
 
 export default function TodoItem(props) {
   const todoDispatch = useContext(ActionsContext)
@@ -14,6 +16,10 @@ export default function TodoItem(props) {
   }
 
   return (
-    <li onClick={handleClick}>{props.todo.item}</li>
+    <li 
+      onClick={handleClick}
+      className={`${todo.todoList[props.id].completed ?
+        'strikethrough' : null}`}
+      >{props.todo.item}</li>
   )
 }

@@ -32,10 +32,20 @@ export const todoReducer = (state, { type, payload }) => {
         }
         return todo
       })
-      
       return {
         ...state,
         todoList: copy
+      }
+
+    case 'REMOVE_COMPLETED':
+      const todoIncompletes = state.todoList.filter(todo => {
+        return !todo.completed
+      })
+      console.log('todoReducer..')
+      console.log(todoIncompletes)
+      return {
+        ...state,
+        todoList: todoIncompletes
       }
 
     default:

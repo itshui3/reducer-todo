@@ -25,6 +25,12 @@ function Form() {
     }})
   }
 
+  const handleRemoval = ev => {
+    ev.preventDefault()
+    console.log('handling removal..')
+    dispatchTodo({ type: 'REMOVE_COMPLETED' })
+
+  } 
 
   return (
     <>
@@ -36,6 +42,9 @@ function Form() {
       />
       <button>Submit</button>
 
+    </form>
+    <form onSubmit={handleRemoval}>
+      <button>Remove Completed</button>
     </form>
 
     </>
