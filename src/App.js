@@ -6,7 +6,7 @@ import { Jumbotron } from 'reactstrap'
 import Form from './components/Form'
 import TodoList from './components/TodoList'
 // Reducer
-import { initialState, todoReducer } from '../reducers/reducer';
+import { initialState, todoReducer } from './reducers/reducer';
 // Contexts
 import StateContext from './contexts/StateContext'
 import ActionsContext from './contexts/ActionsContext'
@@ -21,8 +21,8 @@ function App() {
   return (
 
       <Jumbotron className='App'>
-        <StateContext.Provider value={}>
-          <ActionsContext.Provider>
+        <StateContext.Provider value={todo}>
+          <ActionsContext.Provider value={dispatchTodo}>
             <Form />
             <TodoList />
           </ActionsContext.Provider>

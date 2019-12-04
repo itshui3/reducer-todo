@@ -1,5 +1,5 @@
 import { createContext } from 'react'
 
-const TodoContext = createContext()
+const StateContext = createContext()
 
-export default TodoContext
+export default StateContext

@@ -1,8 +1,14 @@
 // Core Functionality
-import React from 'react'
+import React, { useContext } from 'react'
 // App Components
 
+// Context
+import ActionsContext from '../contexts/ActionsContext'
+import StateContext from '../contexts/StateContext'
+
 function Form() {
+  const dispatchTodo = useContext(ActionsContext)
+  const todo = useContext(StateContext)
   // Form needs to be able to affect state and adjust both query as well as add 
   // to the Todo List
 
@@ -18,6 +24,7 @@ function Form() {
       id: Date.now()
     }})
   }
+
 
   return (
     <>

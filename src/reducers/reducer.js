@@ -25,6 +25,18 @@ export const todoReducer = (state, { type, payload }) => {
         ...state,
         query: payload
       }
+    case 'MARK_COMPLETE':
+      const copy = state.todoList.map(todo => {
+        if (todo.id === payload) { // I need some way to pass a todo's ID into payload with type: 'MARK_COMPLETE'
+          todo.completed = !todo.completed
+        }
+        return todo
+      })
+      
+      return {
+        ...state,
+        todoList: copy
+      }
 
     default:
       return state

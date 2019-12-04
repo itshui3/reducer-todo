@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 // components
 import TodoItem from './TodoItem'
 
-// reducers
-import { initialState, todoReducer } from '../reducers/reducer'
+// context
+import StateContext from '../contexts/StateContext'
 
 function TodoList() {
+  const todo = useContext(StateContext)
   // I need to receive a list of Todos from state
-  const [todo, dispatchTodo] = React.useReducer(todoReducer, initialState)
 
   return (
     <ul>
